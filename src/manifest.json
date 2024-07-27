@@ -1,0 +1,15 @@
+{
+	"manifest_version": 1,
+	"id": "com.hcd.muplugin",
+	"app_min_version": "2.13",
+	"version": "1.0.0",
+	"name": "test",
+	"description": "test",
+	"author": "hcd",
+	"homepage_url": "",
+	"repository_url": "",
+	"keywords": [],
+	"categories": [],
+	"screenshots": [],
+	"icons": {}
+}
