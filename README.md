@@ -1,5 +1,3 @@
-# Joplin Plugin
+# 术语词典
 
-This is your new Joplin plugin. It is suggested that you use this README file to document your plugin.
-
-For information on how to build or publish the plugin, please see [GENERATOR_DOC.md](./GENERATOR_DOC.md)
+术语词典插件：在侧边栏中快速查阅和管理专业术语，提升笔记效率。

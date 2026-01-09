@@ -1,15 +1,15 @@
 {
 	"manifest_version": 1,
-	"id": "com.hcd.muplugin",
+	"id": "joplin-plugin-term-dictionary",
 	"app_min_version": "2.13",
 	"version": "1.0.0",
-	"name": "test",
-	"description": "test",
+	"name": "Joplin Term Dictionary",
+	"description": "术语词典插件：在侧边栏中快速查阅和管理专业术语，提升笔记效率。",
 	"author": "hcd",
-	"homepage_url": "",
-	"repository_url": "",
-	"keywords": [],
-	"categories": [],
+	"homepage_url": "https://github.com/MrHCD/Dev",
+	"repository_url": "https://github.com/MrHCD/Dev",
+	"keywords": ["joplin-plugin", "dictionary", "terminology"],
+	"categories": ["productivity", "personal knowledge management"],
 	"screenshots": [],
 	"icons": {}
 }
