@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+    <div id="app-container">
+
+        <section id="page-list" class="page active">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="搜索术语...">
+                <button id="addTermBtn" class="add-button">+ 新增术语</button>
+            </div>
+            <div id="termList">
+            </div>
+        </section>
+
+        <section id="page-detail" class="page" style="display: none;">
+            <div class="header-bar">
+                <button id="backToListBtn" class="back-button">&larr; 返回</button>
+                <span id="detailTermId" class="id-badge">ID: --</span>
+                <button id="editTermBtn" class="edit-button">编辑</button>
+            </div>
+
+            <div class="detail-content">
+                <h2 id="detailTermTitle"></h2>
+                <div id="detailTermCategory" class="term-tag"></div>
+                <p id="detailTermFull" class="term-full-text"></p>
+                <div class="divider"></div>
+                <p id="detailTermDefinition"></p>
+            </div>
+
+            <div class="danger-zone">
+                <button id="deleteTermBtn" class="delete-button">删除此术语</button>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h3 id="modal-title">编辑术语</h3>
+
+            <div class="form-group">
+                <label>缩写 (Abbr)</label>
+                <input type="text" id="form-abbr" placeholder="例如: SQL">
+            </div>
+
+            <div class="form-group">
+                <label>全称 (Full Name)</label>
+                <input type="text" id="form-full" placeholder="例如: Structured Query Language">
+            </div>
+
+            <div class="form-group">
+                <label>定义 (Definition)</label>
+                <textarea id="form-def" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>分类 (Category)</label>
+                <input type="text" id="form-cat" placeholder="例如: 数据库">
+            </div>
+
+            <div class="modal-actions">
+                <button id="modal-cancel" class="text-button">取消</button>
+                <button id="modal-save" class="primary-button">保存</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

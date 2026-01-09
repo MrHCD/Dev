@@ -1,0 +1,263 @@
+:root {
+    /* 核心背景与文字，跟随系统 */
+    --main-bg: var(--joplin-background-color);
+    --main-text: var(--joplin-color);
+    
+    /* 卡片背景：使用 Joplin 的次级背景色，自动拉开层次 */
+    --card-bg: var(--joplin-background-color-2);
+    
+    /* 边框与分割线 */
+    --border-color: var(--joplin-divider-color);
+    
+    /* 品牌色：用于标题和按钮 */
+    --primary-color: var(--joplin-color-error); /* Joplin 默认的主色调之一 */
+    --link-color: var(--joplin-url-color);
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--main-bg);
+    color: var(--main-text);
+    margin: 0;
+    padding: 24px; /* 增加页边距，告别挤迫感 */
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+#page-list {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* 占据整个面板高度 */
+    overflow: hidden; /* 禁止外层滚动 */
+}
+
+/* 2. 搜索栏固定高度
+.search-container {
+    flex-shrink: 0; /* 禁止搜索框被压缩 */
+    /* padding: 10px; */
+/* } */ 
+
+/* 3. 核心：让列表可滑动 */
+#termList {
+    flex-grow: 1;      /* 占据剩余的所有空间 */
+    overflow-y: auto;  /* 垂直方向内容溢出时显示滚动条 */
+    padding: 10px;
+    
+    /* 优化滑动体验 */
+    -webkit-overflow-scrolling: touch; /* iOS 滑动顺畅 */
+}
+
+/* 4. 美化滚动条 (可选) */
+#termList::-webkit-scrollbar {
+    width: 6px;
+}
+#termList::-webkit-scrollbar-thumb {
+    background: var(--joplin-divider-color);
+    border-radius: 10px;
+}
+
+/* 搜索栏：大间距，圆润设计 */
+.search-container {
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    background: var(--main-bg);
+    padding-bottom: 10px;
+    z-index: 10;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px; /* 圆润的搜索框 */
+    background-color: var(--card-bg);
+    color: var(--main-text);
+    font-size: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: var(--link-color);
+}
+
+.add-button {
+    margin-top: 16px;
+    padding: 10px 18px;
+    background-color: var(--link-color);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 100%;
+}
+
+/* 术语卡片：不再是细线分割，而是独立的块 */
+.term-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px; /* 卡片之间的呼吸间距 */
+    border: 1px solid transparent; /* 默认无边框 */
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* 微弱阴影增加高级感 */
+}
+
+.term-card:hover {
+    border-color: var(--link-color);
+    transform: translateY(-2px); /* 悬浮动效 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.term-card:active {
+    background-color: var(--joplin-background-color-hover); /* 点击时变色 */
+}
+
+.term-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: var(--link-color);
+    margin-bottom: 8px;
+}
+
+.term-tag {
+    display: inline-block;
+    background-color: var(--link-color);
+    color:#fff;
+    padding: 4px 5px;
+    border-radius: 8px;
+    font-size: 1.0em;
+    font-weight: bold;
+    margin-right: 6px;
+    margin-bottom: 6px;
+}
+
+.term-full {
+    font-size: 1em;
+    color: var(--main-text);
+    margin-bottom: 12px;
+}
+
+.term-definition {
+    font-size: 0.95em;
+    color: var(--main-text);
+    opacity: 0.8; /* 让描述文字稍微淡一点，突出标题 */
+}
+
+/* 详情页：纯净布局 */
+.back-button {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--main-text);
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 24px;
+    font-size: 0.9em;
+}
+
+.back-button:hover {
+    background: var(--card-bg);
+}
+
+.edit-button {
+    background-color: var(--link-color);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    float: right;
+}
+
+.delete-button {
+    background-color: var(--joplin-color-error);
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    float: right;
+    margin-right: 10px;
+}
+
+#detailTermTitle {
+    font-size: 2.2em;
+    margin-bottom: 16px;
+    color: var(--main-text);
+}
+
+#detailTermDefinition {
+    font-size: 1.1em;
+    color: var(--main-text);
+    white-space: pre-wrap; /* 保留换行 */
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 半透明遮罩 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px); /* 现代毛玻璃效果 */
+}
+
+.modal-content {
+    background: var(--joplin-background-color);
+    width: 85%;
+    max-width: 400px;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85em;
+    margin-bottom: 6px;
+    opacity: 0.8;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--joplin-divider-color);
+    border-radius: 6px;
+    background: var(--joplin-background-color-2);
+    color: var(--joplin-color);
+    box-sizing: border-box;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.id-badge {
+    font-family: monospace; /* 等宽字体，更有 ID 的感觉 */
+    font-size: 0.75em;
+    color: var(--joplin-color);
+    opacity: 0.5; /* 半透明 */
+    background: var(--joplin-background-color-2);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: auto; /* 配合 flex 布局将其推向中间或左侧 */
+    margin-left: 10px;
+}
