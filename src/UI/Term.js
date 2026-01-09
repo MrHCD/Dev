@@ -92,6 +92,9 @@ function showDetail(termId) {
 
 // 显示术语列表页面
 function showList() {
+    deleteConfirm = false; // 重置删除确认状态
+    document.getElementById('deleteTermBtn').textContent = "删除此术语";
+    document.getElementById('deleteTermBtn').style.fontWeight = "normal";
     pageDetail.style.display = 'none';
     pageList.style.display = 'flex';
     pageList.scrollTop = lastScrollPosition; // 恢复滚动位置
